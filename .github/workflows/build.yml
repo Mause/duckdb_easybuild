@@ -24,13 +24,13 @@ jobs:
           eb duckdb.easyconfig --robot --trace --dry-run >> $GITHUB_STEP_SUMMARY
       - shell: bash
         name: Build GCC
-        timeout-minutes: 12
+        timeout-minutes: 20
         run: |
           . /usr/lmod/lmod/init/bash
           eb GCC-8.3.0.eb --robot --trace
       - shell: bash
         name: Build DuckDB
-        timeout-minutes: 12
+        timeout-minutes: 20
         run: |
           . /usr/lmod/lmod/init/bash
           eb duckdb.easyconfig --robot --trace
