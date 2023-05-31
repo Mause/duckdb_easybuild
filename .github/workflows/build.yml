@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/easybuilders/ubuntu-22.04
+      image: ghcr.io/easybuilders/ubuntu-20.04:latest
     
     steps:
       - uses: actions/checkout@v3
