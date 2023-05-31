@@ -3,7 +3,8 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: ghcr.io/easybuilders/ubuntu-22.04:latest
+    container:
+      image: ghcr.io/easybuilders/ubuntu-22.04
     
     steps:
       - uses: actions/checkout@v3
