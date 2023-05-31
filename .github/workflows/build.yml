@@ -38,4 +38,4 @@ jobs:
         timeout-minutes: 20
         run: |
           . /usr/lmod/lmod/init/bash
-          eb duckdb.easyconfig --robot --trace
+          eb duckdb.eb --robot --trace
