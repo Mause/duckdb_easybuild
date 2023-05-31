@@ -7,8 +7,9 @@ description = "DuckDB is an in-process SQL OLAP database management system"
 toolchain = {'name': 'GCC', 'version': '8.3.0'}
 # builddependencies = [('CMake', '2.8.12', '', ('GCC', '8.3.0'))]
 
-sources = [{'download_filename': f'v{version}', 'filename': f'duckdb-{version}.zip'}]
 source_urls = ['https://codeload.github.com/duckdb/duckdb/zip/refs/tags/']
+sources = [{'download_filename': f'v{version}', 'filename': f'duckdb-{version}.zip'}]
+checksums = ['0aba2352e48bdc1ee289b30b542b10320d67c92f2ad963924103ea82caa7e29f']
 
 exts_list  = []  # todo
 
