@@ -10,12 +10,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - run: |
-         apt update
-         apt install -y curl python3 python3-distutils python3-pip
-         curl -OL https://github.com/surak/Lmod/releases/download/${LMOD_VERSION}/lmod_${LMOD_VERSION}_all.deb
-         apt install -y ./lmod_${LMOD_VERSION}_all.deb
-         # debianutils provides 'which' command
-         apt install -y bzip2 debianutils diffutils file gcc g++ git gzip libibverbs-dev openssl libssl-dev make patch tar unzip xz-utils
-         python3 -m pip install archspec easybuild
+      - run: sudo apt update
+      - run: sudo apt install -y curl python3 python3-distutils python3-pip
+      - run: curl -OL https://github.com/surak/Lmod/releases/download/${LMOD_VERSION}/lmod_${LMOD_VERSION}_all.deb
+      - run: sudo apt install -y ./lmod_${LMOD_VERSION}_all.deb
+       # debianutils provides 'which' command
+      - run: sudo apt install -y bzip2 debianutils diffutils file gcc g++ git gzip libibverbs-dev openssl libssl-dev make patch tar unzip xz-utils
+      - run: python3 -m pip install archspec easybuild
       - run: eb duckdb.easyconfig
