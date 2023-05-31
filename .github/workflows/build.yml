@@ -22,4 +22,4 @@ jobs:
           ls /etc/lmod
           ls /usr/lmod
           . /usr/lmod/lmod/init/bash
-          eb duckdb.easyconfig
+          eb duckdb.easyconfig --robot
