@@ -20,4 +20,4 @@ jobs:
       - shell: bash
         run: |
           . /usr/lmod/lmod/init/bash
-          eb duckdb.easyconfig --robot
+          eb duckdb.easyconfig --robot --trace
