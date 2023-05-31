@@ -18,6 +18,8 @@ jobs:
       - run: sudo apt install -y bzip2 debianutils diffutils file gcc g++ git gzip libibverbs-dev openssl libssl-dev make patch tar unzip xz-utils
       - run: python3 -m pip install archspec easybuild
       - shell: bash
+        name: build DuckDB
+        timeout-minutes: 12
         run: |
           . /usr/lmod/lmod/init/bash
           eb duckdb.easyconfig --robot --trace
