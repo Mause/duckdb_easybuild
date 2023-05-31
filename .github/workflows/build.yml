@@ -20,6 +20,6 @@ jobs:
       - shell: bash
         run: |
           ls /etc/lmod
-          ls /usr/share/lmod
-          . /usr/local/lmod/lmod/init/bash
+          ls /usr/lmod
+          . /usr/lmod/lmod/init/bash
           eb duckdb.easyconfig
