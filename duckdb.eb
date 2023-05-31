@@ -13,4 +13,5 @@ checksums = ['0aba2352e48bdc1ee289b30b542b10320d67c92f2ad963924103ea82caa7e29f']
 
 exts_list  = []  # todo
 
+moduleclass = 'data'
 easyblock = 'CMakeNinja'
