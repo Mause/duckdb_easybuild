@@ -22,6 +22,11 @@ jobs:
         run: |
           . /usr/lmod/lmod/init/bash
           eb duckdb.easyconfig --robot --trace --dry-run >> $GITHUB_STEP_SUMMARY
+      - name: BinUtils
+        shell: bash
+        run: |
+          . /usr/lmod/lmod/init/bash
+          eb binutils-2.32.eb --robot --trace      
       - shell: bash
         name: Build GCC
         timeout-minutes: 20
