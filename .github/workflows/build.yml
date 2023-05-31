@@ -19,7 +19,5 @@ jobs:
       - run: python3 -m pip install archspec easybuild
       - shell: bash
         run: |
-          ls /etc/lmod
-          ls /usr/lmod
           . /usr/lmod/lmod/init/bash
           eb duckdb.easyconfig --robot
