@@ -17,4 +17,7 @@ jobs:
        # debianutils provides 'which' command
       - run: sudo apt install -y bzip2 debianutils diffutils file gcc g++ git gzip libibverbs-dev openssl libssl-dev make patch tar unzip xz-utils
       - run: python3 -m pip install archspec easybuild
-      - run: eb duckdb.easyconfig
+      - shell: bash
+        run: |
+          . /usr/local/lmod/lmod/init/bash
+          eb duckdb.easyconfig
