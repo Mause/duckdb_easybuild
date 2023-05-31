@@ -16,10 +16,10 @@ jobs:
       - run: sudo apt install -y ./lmod_${LMOD_VERSION}_all.deb
        # debianutils provides 'which' command
       - run: sudo apt install -y bzip2 debianutils diffutils file gcc g++ git gzip libibverbs-dev openssl libssl-dev make patch tar unzip xz-utils
-      - run: python3 -m pip install archspec easybuild
+      - run: python3 -m pip install archspec easybuild rich
       - shell: bash
         name: build DuckDB
         timeout-minutes: 12
         run: |
           . /usr/lmod/lmod/init/bash
-          eb duckdb.easyconfig --robot --trace
+          eb duckdb.easyconfig --robot --trace --dry-run
