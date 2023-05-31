@@ -1,0 +1,15 @@
+name = 'duckdb'
+version = '0.8.0'
+
+homepage = 'http://duckdb.org'
+description = "DuckDB is an in-process SQL OLAP database management system"
+
+toolchain = {'name': 'GCC', 'version': '8.3.0'}
+# builddependencies = [('CMake', '2.8.12', '', ('GCC', '8.3.0'))]
+
+sources = [{'download_filename': f'v{version}', 'filename': f'duckdb-{version}.zip'}]
+source_urls = ['https://codeload.github.com/duckdb/duckdb/zip/refs/tags/']
+
+exts_list  = []  # todo
+
+easyblock = 'CMakeNinja'
