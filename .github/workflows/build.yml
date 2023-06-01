@@ -32,7 +32,7 @@ jobs:
         timeout-minutes: 60
         run: |
           . /usr/lmod/lmod/init/bash
-          eb GCC-8.3.0.eb --robot --trace
+          eb GCC-13.1.0.eb --robot --trace
       - shell: bash
         name: Build DuckDB
         timeout-minutes: 20
