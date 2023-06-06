@@ -15,7 +15,7 @@ jobs:
       - run: curl -OL https://github.com/surak/Lmod/releases/download/${LMOD_VERSION}/lmod_${LMOD_VERSION}_all.deb
       - run: sudo apt install -y ./lmod_${LMOD_VERSION}_all.deb
        # debianutils provides 'which' command
-      - run: sudo apt install -y bzip2 debianutils diffutils file gcc g++ git gzip libibverbs-dev openssl libssl-dev make patch tar unzip xz-utils
+      - run: sudo apt install -y g++-multilib libc6-dev-i386 bzip2 debianutils diffutils file gcc g++ git gzip libibverbs-dev openssl libssl-dev make patch tar unzip xz-utils
       - run: python3 -m pip install archspec easybuild rich
       
       - name: Restore cache
@@ -35,13 +35,15 @@ jobs:
         run: |
           . /usr/lmod/lmod/init/bash
           eb binutils-2.32.eb --robot --trace
+          
+      - run: apt 
 
-#       - name: GCCcore
-#         shell: bash
-#         timeout-minutes: 120
-#         run: |
-#           . /usr/lmod/lmod/init/bash
-#           eb GCCcore-10.2.0.eb --robot --trace
+      - name: GCCcore
+        shell: bash
+        timeout-minutes: 120
+        run: |
+          . /usr/lmod/lmod/init/bash
+          eb GCCcore-10.2.0.eb --robot --trace
 
       - shell: bash
         name: Build DuckDB
