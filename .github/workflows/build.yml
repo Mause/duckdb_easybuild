@@ -17,6 +17,14 @@ jobs:
        # debianutils provides 'which' command
       - run: sudo apt install -y bzip2 debianutils diffutils file gcc g++ git gzip libibverbs-dev openssl libssl-dev make patch tar unzip xz-utils
       - run: python3 -m pip install archspec easybuild rich
+      
+      - name: Restore cache
+        id: cache-restore
+        uses: actions/cache/restore@v3
+        with:
+          path: /home/runner/.local/easybuild/software/
+          key: ${{ runner.os }}-1 # -${{ hashFiles('duckdb.eb') }}
+
       - shell: bash
         name: Build DuckDB (dry-run)
         run: |
@@ -36,3 +44,11 @@ jobs:
       - run: cat /tmp/eb-*/easybuild-duckdb-*.log
         if: always()
         name: Dump logs
+
+      - name: Save cache
+        id: cache-save
+        if: always()
+        uses: actions/cache/save@v3
+        with:
+          path: /home/runner/.local/easybuild/software/
+          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
