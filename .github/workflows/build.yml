@@ -49,7 +49,7 @@ jobs:
         run: |
           . /usr/lmod/lmod/init/bash
           eb duckdb.eb --robot --trace
-      - run: cat /tmp/eb-*/easybuild-duckdb-*.log
+      - run: cat /tmp/eb-*/easybuild-*.log
         if: always()
         name: Dump logs
 
