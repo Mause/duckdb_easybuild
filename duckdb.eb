@@ -7,6 +7,7 @@ sanity_check_commands = ["duckdb -c 'select version()'"]
 
 toolchain = {'name': 'GCC', 'version': 'system'}
 # builddependencies = [('CMake', '2.8.12', '', ('GCC', '8.3.0'))]
+builddependencies = [('Ninja', '1.11.1')]
 
 source_urls = ['https://codeload.github.com/duckdb/duckdb/zip/refs/tags/']
 sources = [{'download_filename': f'v{version}', 'filename': f'duckdb-{version}.zip'}]
