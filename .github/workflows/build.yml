@@ -22,8 +22,8 @@ jobs:
         id: cache-restore
         uses: actions/cache/restore@v3
         with:
-          path: /home/runner/.local/easybuild/software/
-          key: ${{ runner.os }}-1 # -${{ hashFiles('duckdb.eb') }}
+          path: /home/runner/.local/easybuild
+          key: ${{ runner.os }}-root-1 # -${{ hashFiles('duckdb.eb') }}
 
       - shell: bash
         name: Build DuckDB (dry-run)
@@ -58,5 +58,5 @@ jobs:
         if: always()
         uses: actions/cache/save@v3
         with:
-          path: /home/runner/.local/easybuild/software/
+          path: /home/runner/.local/easybuild
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
