@@ -28,12 +28,6 @@ jobs:
           . /usr/lmod/lmod/init/bash
           eb binutils-2.32.eb --robot --trace      
       - shell: bash
-        name: Build GCC
-        timeout-minutes: 120
-        run: |
-          . /usr/lmod/lmod/init/bash
-          eb GCC-13.1.0.eb --robot --trace
-      - shell: bash
         name: Build DuckDB
         timeout-minutes: 20
         run: |
