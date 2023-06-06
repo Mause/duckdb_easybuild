@@ -21,7 +21,7 @@ jobs:
         name: Build DuckDB (dry-run)
         run: |
           . /usr/lmod/lmod/init/bash
-          eb duckdb.easyconfig --robot --trace --dry-run >> $GITHUB_STEP_SUMMARY
+          eb duckdb.eb --robot --trace --dry-run >> $GITHUB_STEP_SUMMARY
       - name: BinUtils
         shell: bash
         run: |
