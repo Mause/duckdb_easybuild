@@ -45,7 +45,7 @@ jobs:
 
       - shell: bash
         name: Build DuckDB
-        timeout-minutes: 120
+        timeout-minutes: 240
         run: |
           . /usr/lmod/lmod/init/bash
           eb duckdb.eb --robot --trace
