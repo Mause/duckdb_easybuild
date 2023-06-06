@@ -5,8 +5,8 @@ homepage = 'http://duckdb.org'
 description = "DuckDB is an in-process SQL OLAP database management system"
 sanity_check_commands = ["duckdb -c 'select version()'"]
 
-toolchain = SYSTEM
 local_gccver = '10.2.0'
+toolchain = ('GCC', local_gccver)
 builddependencies = [
     ('GCC', local_gccver),
     ('CMake', '3.18.4', '', ('GCCcore', local_gccver)),
