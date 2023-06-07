@@ -35,6 +35,8 @@ jobs:
         run: |
           . /usr/lmod/lmod/init/bash
           eb binutils-2.32.eb --robot --trace
+          
+      - run: echo '\nwrap_system_openssl = False' >> /home/runner/.local/easybuild/easyconfigs/o/OpenSSL/OpenSSL-1.1.eb
 
       - name: OpenSSL
         shell: bash
