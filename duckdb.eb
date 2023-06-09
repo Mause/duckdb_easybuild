@@ -7,7 +7,7 @@ sanity_check_commands = ["duckdb -c 'select version()'"]
 
 toolchain = {'name': 'GCCcore', 'version': '12.2.0'}
 builddependencies = [
-    ('CMake', '3.26.3'),
+    ('CMake', '3.24.3'),
     ('Ninja', '1.11.1'),
 ]
 
