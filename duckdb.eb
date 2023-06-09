@@ -5,10 +5,10 @@ homepage = 'http://duckdb.org'
 description = "DuckDB is an in-process SQL OLAP database management system"
 sanity_check_commands = ["duckdb -c 'select version()'"]
 
-toolchain = {'name': 'GCC', 'version': '13.1.0'}
+toolchain = {'name': 'GCC', 'version': '12.3.0'}
 builddependencies = [
     ('CMake', '3.22.1'),
-    ('Ninja', '1.10.2'),
+    ('Ninja', '1.11.1'),
 ]
 
 source_urls = ['https://codeload.github.com/duckdb/duckdb/zip/refs/tags/']
