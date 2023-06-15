@@ -48,6 +48,13 @@ jobs:
           eb OpenSSL-1.1.eb --robot --trace
 
       - shell: bash
+        name: GCCcore
+        timeout-minutes: 240
+        run: |
+          . /usr/lmod/lmod/init/bash
+          eb GCCcore-12.2.0.eb --robot --trace
+
+      - shell: bash
         name: Build DuckDB
         timeout-minutes: 240
         run: |
@@ -66,4 +73,4 @@ jobs:
         uses: actions/cache/save@v3
         with:
           path: /home/runner/.local/easybuild
-          key: ${{ runner.os }}-root-2
+          key: ${{ runner.os }}-root-3
