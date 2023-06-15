@@ -53,7 +53,10 @@ jobs:
         run: |
           . /usr/lmod/lmod/init/bash
           eb duckdb.eb --robot --trace
-      - run: cat /tmp/eb-*/easybuild-*.log
+      - run: |
+          shopt -s nullglob
+          for f in "/tmp/eb-*/easybuild-*.log"; do cat $f; done
+        shell: bash
         if: always()
         name: Dump logs
 
